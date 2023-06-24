@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-     <main class="main">
+    <main class="main">
         <header class="header">
             <a href="#" class="logo">Quiz.</a>
             <nav class="navbar">
@@ -18,16 +20,50 @@
             </nav>
         </header>
 
-        <section class="home">
-            <div class="home-content">
-                <h1>Quiz Website</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Ad quibusdam vero adipisci.
-                     Maiores non assumenda minima quisquam tenetur velit, tempora, voluptas nihil voluptatum ipsa dignissimos.</p>
-                     <button class="start-btn">Start Quiz</button>
-            </div>
-        </section>
-     </main>
-     <div class="popup-info">
+        <div class="container">
+            <section class="quiz-section">
+                <div class="quiz-box">
+                    <h1>Codehal Quiz</h1>
+                    <div class="quiz-header">
+                        <span>Quiz Website Tutorials</span>
+                        <span class="header-score">Score: 0 / 5</span>
+                    </div>
+                    <h2 class="question-text">What does Html stand for?</h2>
+
+                    <div class="option-list">
+                        <div class="option">
+                            <span>A. po</span>
+                        </div>
+                        <div class="option">
+                            <span>B. po</span>
+                        </div>
+                        <div class="option">
+                            <span>C. po</span>
+                        </div>
+                        <div class="option">
+                            <span>D. po</span>
+                        </div>
+
+                        <div class="quiz-footer">
+                            <span class="question-total"> 1 of 5 Questions </span>
+                            <button class="next-btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home">
+                <div class="home-content">
+                    <h1>Quiz Website</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Ad quibusdam vero adipisci.
+                        Maiores non assumenda minima quisquam tenetur velit, tempora, voluptas nihil voluptatum ipsa
+                        dignissimos.</p>
+                    <button class="start-btn">Start Quiz</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div class="popup-info">
         <h2>Quiz Guide</h2>
         <span class="info">1.Lorem, ipsum dolor sit amet consectetur.</span>
         <span class="info">2.Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
@@ -36,11 +72,12 @@
         <span class="info">5.Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
 
         <div class="btn-group">
-        <button class="info-btn exit-btn">Exit Quiz</button>
-        <a href="#" class="info-btn continue-btn">Continue</a>
-     </div>
+            <button class="info-btn exit-btn">Exit Quiz</button>
+            <a href="#" class="info-btn continue-btn">Continue</a>
+        </div>
     </div>
     <script src="questions.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
