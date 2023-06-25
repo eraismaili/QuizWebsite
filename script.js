@@ -5,6 +5,7 @@ const main = document.querySelector('.main');
 const continueBtn = document.querySelector('.continue-btn');
 const quizSection = document.querySelector('.quiz-section');
 const quizBox = document.querySelector('.quiz-box');
+const resultBox = document.querySelector('.result-box');
 
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -43,7 +44,8 @@ nextBtn.onclick = () => {
         nextBtn.classList.remove('active');
     }
     else {
-        console.log('Question Completed');
+        // console.log('Question Completed');
+        showResultBox();
     }
 
 }
@@ -104,4 +106,8 @@ function questionCounter(index) {
 function headerScore() {
     const headerScoreText = document.querySelector('.header-score');
     headerScoreText.textContent = `Score: ${userScore} / ${questions.length}`;
+}
+function showResultBox() {
+    quizBox.classList.remove('active');
+    resultBox.classList.add('active');
 }
