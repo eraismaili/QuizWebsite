@@ -9,11 +9,18 @@ const resultBox = document.querySelector('.result-box');
 const tryAgainBtn = document.querySelector('.tryAgain-btn');
 const goHomeBtn = document.querySelector('.goHome-btn');
 
-startBtn.onclick = () => {
+    startBtn.onclick = () => {
     popupInfo.classList.add('active');
     main.classList.add('active');
 
 }
+function playAudio() {
+    audio.play();
+}
+
+startBtn.addEventListener('click', playAudio);
+
+
 exitBtn.onclick = () => {
     popupInfo.classList.remove('active');
     main.classList.remove('active');
@@ -35,7 +42,7 @@ tryAgainBtn.onclick = () => {
     quizBox.classList.add('active');
     nextBtn.classList.remove('active');
     resultBox.classList.remove('active');
-
+    
 
     questionCount = 0;
     questionNumb = 1;
@@ -46,6 +53,8 @@ tryAgainBtn.onclick = () => {
 
     headerScore();
 }
+
+startBtn.addEventListener('click', playAudio);
 goHomeBtn.onclick = () => {
     quizSection.classList.remove('active');
     nextBtn.classList.remove('active');

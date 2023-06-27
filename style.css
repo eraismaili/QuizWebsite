@@ -268,11 +268,28 @@ body {
     border-radius: 3px;
     padding: 7px;
 }
+.question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-gif {
+    max-width: 25%;
+    height: auto;
+    margin-bottom: 20px;
+}
 
 .quiz-box .question-text {
     font-size: 24px;
     font-weight: 600;
 }
+.option-list {
+    
+    overflow-y: auto;
+}
+
 
 .option-list .option {
     width: 100%;
