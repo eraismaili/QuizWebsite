@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pixi.js Example</title>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay loop muted>
+        <source src="era.mp4" type="video/mp4">
+        <!-- Provide fallback content here -->
+    </video>
+
+    <div id="canvas"></div>
+
+    <div id="content">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit lectus sit amet consectetur ultricies. Nulla facilisi. Curabitur tristique bibendum tincidunt. Phasellus ac tellus odio. Mauris fringilla, purus sit amet cursus pretium, justo mauris consequat nulla, vitae gravida ex purus a enim.</p>
+    </div>
+
+    <script>
+        // Create Pixi.js application
+        const app = new PIXI.Application({
+            width: window.innerWidth,
+            height: window.innerHeight,
+            transparent: true,
+            antialias: true,
+            resolution: window.devicePixelRatio || 1,
+            view: document.getElementById("canvas"),
+        });
+
+        // Create video texture
+        const videoTexture = PIXI.Texture.from("era.mp4");
+        const videoSprite = new PIXI.Sprite(videoTexture);
+        videoSprite.width = app.renderer.width;
+        videoSprite.height = app.renderer.height;
+        app.stage.addChild(videoSprite);
+
+        // Add text element
+        const textStyle = new PIXI.TextStyle({
+            fontFamily: 'Arial',
+            fontSize: 40,
+            fill: '#FFFFFF',
+            align: 'center',
+        });
+
+        const textElement = new PIXI.Text("About Us", textStyle);
+        textElement.anchor.set(0.5);
+        textElement.position.set(app.renderer.width / 2, app.renderer.height / 2);
+        app.stage.addChild(textElement);
+
+        // Render the application
+        app.ticker.add(() => {
+            if (videoTexture.baseTexture.valid) {
+                videoTexture.update();
+            }
+        });
+    </script>
+</body>
+</html>
