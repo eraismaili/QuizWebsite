@@ -1,16 +1,70 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>About Us</title>
     <script src="https://pixijs.download/release/pixi.min.js"></script>
     <style>
-    
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+
+        }
 
         body {
             margin: 0;
             overflow: hidden;
+            color: #fff;
+            background: #09001d;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 32px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            filter: drop-shadow(0 0 5px #09001d);
+
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #c40094;
+        }
+
+        .main.active {
+            filter: blur(15px);
+            pointer-events: none;
         }
 
         #canvas {
@@ -34,30 +88,47 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 0 0 10px rgba(0, 0, 0, .3);
-}
+        }
 
         p {
             font-size: 20px;
             text-align: center;
             text-shadow: 0 0 10px rgba(0, 0, 0, .3);
-             margin-bottom: 30px;
+            margin-bottom: 30px;
 
         }
     </style>
 </head>
+
 <body>
-    
-    <video id="video-background" autoplay loop muted>
-        <source src="era.mp4" type="video/mp4">
-        <!-- Provide fallback content here -->
-    </video>
+    <main class="main">
+        <header class="header">
+            <a href="#" class="logo">Quiz.</a>
+            <nav class="navbar">
+                <a href="index.html"">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
 
-    <div id="canvas"></div>
+        <video id="video-background" autoplay loop muted>
+            <source src="vid1.mp4" type="video/mp4">
+            <!-- Provide fallback content here -->
+        </video>
 
-    <div id="content">
-        <h1>About Us</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit lectus sit amet consectetur ultricies. Nulla facilisi. Curabitur tristique bibendum tincidunt. Phasellus ac tellus odio. Mauris fringilla, purus sit amet cursus pretium, justo mauris consequat nulla, vitae gravida ex purus a enim.</p>
-    </div>
+        <div id="canvas"></div>
+
+        <div id="content">
+            <h1>About Us</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit lectus sit amet consectetur
+                ultricies. Nulla facilisi. Curabitur tristique bibendum tincidunt. Phasellus ac tellus odio. Mauris
+                fringilla, purus sit amet cursus pretium, justo mauris consequat nulla, vitae gravida ex purus a enim.
+            </p>
+        </div>
+
+    </main>
+
 
     <script>
         // Create Pixi.js application
@@ -98,4 +169,5 @@
         });
     </script>
 </body>
+
 </html>
