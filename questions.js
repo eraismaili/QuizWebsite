@@ -1,58 +1,58 @@
 let questions = [
     {
         numb: 1,
-        question: "What does “www” stand for in a website browser",
-        answer: "D. World Wide Web",
+        question: "What is the highest-selling video game of all time?",
+        answer: "D. Tetris",
         options: [
-            "A. World's widest web",
-            "B. Wonderful World of Webs",
-            "C. Wireless Widget Web",
-            "D. World Wide Web"
+            "A. Minecraft",
+            "B. Grand Theft Auto V",
+            "C. PlayerUnknown's Battlegrounds (PUBG) ",
+            "D. Tetris"
         ]
     },
     {
         numb: 2,
-        question: " What was the fastest growing web browser in 2020?",
-        answer: "A. Microsoft Edge",
+        question: " Which gaming console is developed and produced by Sony Interactive Entertainment?",
+        answer: "A.  PlayStation",
         options: [
-            "A. Microsoft Edge",
-            "B. Firefox",
-            "C. DuckDuckGo",
-            "D. Internet Explorer"
+            "A.  PlayStation",
+            "B. Xbox",
+            "C.  Nintendo Switch",
+            "D. Atari"
         ]
     },
     {
         numb: 3,
-        question: "Which model of computer is the best selling of all time?",
-        answer: "C. Commodore 64",
+        question: "Which iconic video game character is a plumber known for rescuing Princess Peach?",
+        answer: "C. Mario",
         options: [
-            "A. Apple II",
-            "B. IBM PC (5150)",
-            "C. Commodore 64",
-            "D. Sinclair ZX Spectrum"
+            "A. Sonic the Hedgehog",
+            "B. Donkey Kong",
+            "C. Mario",
+            "D. Link"
         ]
     },
     {
         numb: 4,
-        question: " Which company developed the first mobile phone?",
-        answer: "A. Motorola",
+        question: " Which programming language is commonly used for game development",
+        answer: "A. C++",
         options: [
-            "A. Motorola",
-            "B. Nokia",
-            "C. Samsung",
-            "D. Apple"
+            "A. C++",
+            "B. HTML",
+            "C. Python",
+            "D. Java"
 
         ]
     },
     {
         numb: 5,
-        question: "What year was the oldest programming language still in use invented?",
-        answer: "A. 1957",
+        question: "Which popular game genre involves players competing against each other in an arena-like setting?",
+        answer: "A.  Battle royale",
         options: [
-            "A. 1957",
-            "B. 1952",
-            "C. 1960",
-            "D. 1974"
+            "A. Battle royale",
+            "B. Puzzle games",
+            "C. Role-playing games (RPGs)",
+            "D. First-person shooters (FPS)"
 
         ]
     }
