@@ -85,7 +85,7 @@ h2:before {
 
 .main {
   min-height: 100vh;
-  background: url('./images/bg3.jpg') no-repeat;
+  background: url('./images/bg2.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   pointer-events: auto;

@@ -1,7 +1,7 @@
 let questions = [
     {
         numb: 1,
-        question: "What is the highest-selling video game of all time?",
+        question: "What is the most popular and highest-selling video game of all time?",
         answer: "D. Tetris",
         options: [
             "A. Minecraft",
@@ -46,7 +46,7 @@ let questions = [
     },
     {
         numb: 5,
-        question: "Which popular game genre involves players competing against each other in an arena-like setting?",
+        question: "Which game  involves players competing against each other in an arena-like setting?",
         answer: "A.  Battle royale",
         options: [
             "A. Battle royale",
