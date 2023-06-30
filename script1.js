@@ -14,22 +14,22 @@ const loader = PIXI.Loader.shared;
 
 loader
   .add([
-    "./images/web.jpg",
-    "./images/web1.jpg",
-    "./images/web2.jpg",
+    "https://i.imgur.com/BFZqXAH.jpg",
+    "https://i.imgur.com/ZIFt5wg.jpg",
+    "https://i.imgur.com/SNfPDaS.jpg",
     "https://i.imgur.com/Dc36VFg.jpg"
   ])
   .load(setup);
 
 function setup(loader, resources) {
   const img1 = PIXI.Sprite.from(
-    resources["./images/web.jpg"].name
+    resources["https://i.imgur.com/BFZqXAH.jpg"].name
   );
   const img2 = PIXI.Sprite.from(
-    resources["./images/web1.jpg"].name
+    resources["https://i.imgur.com/ZIFt5wg.jpg"].name
   );
   const img3 = PIXI.Sprite.from(
-    resources["./images/web2.jpg"].name
+    resources["https://i.imgur.com/SNfPDaS.jpg"].name
   );
   const img4 = PIXI.Sprite.from(
     resources["https://i.imgur.com/Dc36VFg.jpg"].name
@@ -75,14 +75,14 @@ function setup(loader, resources) {
       shockwaveFilter.wavelength = 300;
       switch (currentCountry) {
         case 1:
-          country.innerHTML = "Web Development";
+          country.innerHTML = "Maldives";
           break;
         case 2:
-          country.innerHTML = "Game Development";
+          country.innerHTML = "Turkey";
           app.ticker.add(slide1To2);
           break;
         case 3:
-          country.innerHTML = "Data Structure";
+          country.innerHTML = "Seychelles";
           app.ticker.add(slide2To3);
           break;
         case 4:
@@ -113,15 +113,15 @@ function setup(loader, resources) {
       shockwaveFilter.wavelength = 300;
       switch (currentCountry) {
         case 1:
-          country.innerHTML = "Web Development";
+          country.innerHTML = "Maldives";
           app.ticker.add(slide2To1);
           break;
         case 2:
-          country.innerHTML = "Game Development";
+          country.innerHTML = "Turkey";
           app.ticker.add(slide3To2);
           break;
         case 3:
-          country.innerHTML = "Data Structure";
+          country.innerHTML = "Seychelles";
           app.ticker.add(slide4To3);
           break;
         case 4:
