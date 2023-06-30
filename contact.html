@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <title>About Us</title>
     <script src="https://pixijs.download/release/pixi.min.js"></script>
+
+  
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+       
 
         * {
             margin: 0;
@@ -92,9 +95,75 @@
             font-size: 20px;
             text-align: center;
             text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            color: white;
             margin-bottom: 30px;
 
         }
+
+        .box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background-color:transparent;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .question-gif{
+         max-width: 120%;
+         height: auto;
+        margin-bottom: 20px;
+        }
+        
+
+        .box h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .box p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .box a {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .box a img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .socials {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        }
+
+.socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.social-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 5px;
+}
+
     </style>
 </head>
 
@@ -103,7 +172,7 @@
         <header class="header">
             <a href="#" class="logo">Quiz.</a>
             <nav class="navbar">
-                <a href="index.html"">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html" class="active">About</a>
                 <a href="#">Services</a>
                 <a href="#">Contact</a>
@@ -117,16 +186,28 @@
 
         <div id="canvas"></div>
 
-        <div id="content">
-            <h1>About Us</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit lectus sit amet consectetur
-                ultricies. Nulla facilisi. Curabitur tristique bibendum tincidunt. Phasellus ac tellus odio. Mauris
-                fringilla, purus sit amet cursus pretium, justo mauris consequat nulla, vitae gravida ex purus a enim.
-            </p>
+        <div class="box">
+            <img src="giphy.gif" alt="Question GIF" class="question-gif">
+            <h2>If you want to get in touch with our team, you can contact us at:</h2>
+            <a class="link" href="mailto:eraaismaili@gmail.com" target="_blank"> <p> eraaismaili@gmail.com </p> </a>
+            <a class="link" href="mailto:el51212@ubt-uni.net" target="_blank"> <p>el51212@ubt-uni.net</p> </a>
+            
+            <div class="socials">
+                <a href="https://www.facebook.com/era.ismaili3">
+                    <img src="facebook.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="#">
+                    <img src="linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="#">
+                    <img src="gmail.png" alt="Gmail" class="social-icon">
+                </a>
+            </div>
+            
+
         </div>
-
+    
     </main>
-
 
     <script>
         // Create Pixi.js application
@@ -145,19 +226,6 @@
         videoSprite.width = app.renderer.width;
         videoSprite.height = app.renderer.height;
         app.stage.addChild(videoSprite);
-
-        // Add text element
-        const textStyle = new PIXI.TextStyle({
-            fontFamily: 'Arial',
-            fontSize: 40,
-            fill: '#FFFFFF',
-            align: 'center',
-        });
-
-        const textElement = new PIXI.Text("About Us", textStyle);
-        textElement.anchor.set(0.5);
-        textElement.position.set(app.renderer.width / 2, app.renderer.height / 2);
-        app.stage.addChild(textElement);
 
         // Render the application
         app.ticker.add(() => {
