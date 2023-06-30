@@ -162,11 +162,15 @@ body {
     color: whitesmoke;
     text-transform: capitalize;
     font-size: 15px;
-    padding: 30px 20px 0 20px;
+    padding: 10px 20px 0 20px;
     border-radius: 4px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.226);
     cursor: pointer;
     border: 1px solid white;
+}
+
+.float-text p {
+    margin-bottom: 10px;
 }
 
 .float-card-info {
