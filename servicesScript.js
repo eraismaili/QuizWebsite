@@ -14,25 +14,25 @@ const loader = PIXI.Loader.shared;
 
 loader
   .add([
-    "https://i.imgur.com/BFZqXAH.jpg",
-    "https://i.imgur.com/ZIFt5wg.jpg",
-    "https://i.imgur.com/SNfPDaS.jpg",
-    "https://i.imgur.com/Dc36VFg.jpg"
+    "https://i.imgur.com/cVhWnQP.jpeg",
+    "https://i.imgur.com/UzPYfiG.jpeg",
+    "https://i.imgur.com/Pgqjl1C.jpeg",
+    "https://i.imgur.com/kjFPVxl.jpeg"
   ])
   .load(setup);
 
 function setup(loader, resources) {
   const img1 = PIXI.Sprite.from(
-    resources["https://i.imgur.com/BFZqXAH.jpg"].name
+    resources["https://i.imgur.com/cVhWnQP.jpeg"].name
   );
   const img2 = PIXI.Sprite.from(
-    resources["https://i.imgur.com/ZIFt5wg.jpg"].name
+    resources["https://i.imgur.com/UzPYfiG.jpeg"].name
   );
   const img3 = PIXI.Sprite.from(
-    resources["https://i.imgur.com/SNfPDaS.jpg"].name
+    resources["https://i.imgur.com/Pgqjl1C.jpeg"].name
   );
   const img4 = PIXI.Sprite.from(
-    resources["https://i.imgur.com/Dc36VFg.jpg"].name
+    resources["https://i.imgur.com/kjFPVxl.jpeg"].name
   );
 
   function centerImage(image) {
@@ -75,18 +75,18 @@ function setup(loader, resources) {
       shockwaveFilter.wavelength = 300;
       switch (currentCountry) {
         case 1:
-          country.innerHTML = "Maldives";
+          country.innerHTML = "Music Trivia Quiz";
           break;
         case 2:
-          country.innerHTML = "Turkey";
+          country.innerHTML = "History Trivia Quiz";
           app.ticker.add(slide1To2);
           break;
         case 3:
-          country.innerHTML = "Seychelles";
+          country.innerHTML = "Animals Trivia Quiz";
           app.ticker.add(slide2To3);
           break;
         case 4:
-          country.innerHTML = "Italy";
+          country.innerHTML = "Sport Trivia Quiz";
           app.ticker.add(slide3To4);
       }
 
@@ -113,19 +113,19 @@ function setup(loader, resources) {
       shockwaveFilter.wavelength = 300;
       switch (currentCountry) {
         case 1:
-          country.innerHTML = "Maldives";
+          country.innerHTML = "Music Trivia Quiz";
           app.ticker.add(slide2To1);
           break;
         case 2:
-          country.innerHTML = "Turkey";
+          country.innerHTML = "History Trivia Quiz";
           app.ticker.add(slide3To2);
           break;
         case 3:
-          country.innerHTML = "Seychelles";
+          country.innerHTML = "Animals Trivia Quiz";
           app.ticker.add(slide4To3);
           break;
         case 4:
-          country.innerHTML = "Italy";
+          country.innerHTML = "Sport Trivia Quiz";
       }
 
       function slide4To3() {
