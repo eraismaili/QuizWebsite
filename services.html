@@ -1,166 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Services</title>
-    <script src="https://pixijs.download/release/pixi.min.js"></script>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8">
+  <title>CodePen - Full Page Slider With Ripple Animation Effect</title>
+  <link rel="stylesheet" href="servicesStyle.css">
 
-        #canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        #slider-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 400px;
-            overflow: hidden;
-        }
-
-        #slider {
-            display: flex;
-            height: 100%;
-        }
-
-        .slide {
-            flex: 0 0 600px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column; /* Added to stack image and text vertically */
-            opacity: 0; /* Hide slides initially */
-            transition: opacity 0.5s ease-in-out; /* Added for fade effect */
-        }
-
-        .slide.active {
-            opacity: 1; /* Show active slide */
-        }
-
-        .slider-navigation {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 10px;
-        }
-
-        .slider-navigation .arrow {
-            color: #ffffff;
-            font-size: 40px;
-            cursor: pointer;
-        }
-
-        .slider-text {
-            color: #ffffff;
-            text-align: center;
-            font-size: 24px;
-            margin-top: 10px;
-        }
-    </style>
 </head>
+
 <body>
-    <video id="video-background" autoplay loop muted>
-        <source src="era.mp4" type="video/mp4">
-        <!-- Provide fallback content here -->
-    </video>
+  <!-- partial:index.partial.html -->
+  <!-- Tutorial: https://youtu.be/mGT0bNxEKAU -->
+  <div class="controls">
+    <h2>Maldives</h2>
+    <button class="control-r">&gt;</button>
+    <button class="control-l">&lt;</button>
+  </div>
+  <!--See in full page view for a better experience-->
+  <!--
+I cropped the images to 1920 * 1080
+but here they are with their original sizes
+https://unsplash.com/photos/AlEyuIKuSmc
+https://unsplash.com/photos/n5wwck8ES4w
+https://unsplash.com/photos/_l8ZdgJ9m7w
+https://unsplash.com/photos/34uPbVtqutA
+-->
+  <!-- partial -->
+  <script src='https://pixijs.download/v6.1.0-rc.4/pixi.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/pixi-filters@latest/dist/pixi-filters.js'></script>
+  <script src="servicesScript.js"></script>
 
-    <div id="canvas"></div>
-
-    <div id="slider-container">
-        <div class="slider-navigation">
-            <div class="arrow" id="prev-slide">&lt;</div>
-            <div class="arrow" id="next-slide">&gt;</div>
-        </div>
-
-        <div id="slider">
-            <div class="slide active">
-                <img src="quiz.png" alt="Quiz 1">
-                <div class="slider-text">Quiz 1</div>
-            </div>
-            <div class="slide">
-                <img src="quizz.png" alt="Quiz 2">
-                <div class="slider-text">Quiz 2</div>
-            </div>
-            <div class="slide">
-                <img src="quizzz.png" alt="Quiz 3">
-                <div class="slider-text">Quiz 3</div>
-            </div>
-            <div class="slide">
-                <img src="quiz.png" alt="Quiz 4">
-                <div class="slider-text">Quiz 4</div>
-            </div>
-            <div class="slide">
-                <img src="quizzz.png" alt="Quiz 5">
-                <div class="slider-text">Quiz 5</div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Create Pixi.js application
-        const app = new PIXI.Application({
-            width: window.innerWidth,
-            height: window.innerHeight,
-            transparent: true,
-            antialias: true,
-            resolution: window.devicePixelRatio || 1,
-            view: document.getElementById("canvas"),
-        });
-
-        // Add slides to the slider
-        const sliderContainer = document.getElementById("slider");
-        const slides = Array.from(sliderContainer.children);
-        const prevSlideButton = document.getElementById("prev-slide");
-        const nextSlideButton = document.getElementById("next-slide");
-
-        // Set initial slide index
-        let currentSlideIndex = 0;
-        slides[currentSlideIndex].classList.add('active');
-
-        // Function to transition to the next slide
-        function nextSlide() {
-            const previousSlide = slides[currentSlideIndex];
-            previousSlide.classList.remove('active');
-
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            const currentSlide = slides[currentSlideIndex];
-            currentSlide.classList.add('active');
-        }
-
-        // Function to transition to the previous slide
-        function prevSlide() {
-            const previousSlide = slides[currentSlideIndex];
-            previousSlide.classList.remove('active');
-
-            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-            const currentSlide = slides[currentSlideIndex];
-            currentSlide.classList.add('active');
-        }
-
-        // Attach event listeners to navigation buttons
-        prevSlideButton.addEventListener("click", prevSlide);
-        nextSlideButton.addEventListener("click", nextSlide);
-
-        // Start the slider loop
-        setInterval(nextSlide, 3000);
-
-        // Render the application
-        app.ticker.add(() => {
-            // Additional code for PIXI.js can be added here if needed
-        });
-    </script>
 </body>
+
 </html>
