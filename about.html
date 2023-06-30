@@ -1,103 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>About Us</title>
-    <script src="https://pixijs.download/release/pixi.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-
-        }
-
-        body {
-            margin: 0;
-            overflow: hidden;
-            color: #fff;
-            background: #09001d;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 10%;
-            background: transparent;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 32px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            margin-left: 35px;
-            filter: drop-shadow(0 0 5px #09001d);
-
-        }
-
-        .navbar a {
-            font-size: 18px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            margin-left: 35px;
-            transition: .3s;
-        }
-
-        .navbar a:hover,
-        .navbar a.active {
-            color: #c40094;
-        }
-
-        .main.active {
-            filter: blur(15px);
-            pointer-events: none;
-        }
-
-        #canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        #content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #fff;
-        }
-
-        h1 {
-            font-size: 78px;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 0 0 10px rgba(0, 0, 0, .3);
-        }
-
-        p {
-            font-size: 20px;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(0, 0, 0, .3);
-            margin-bottom: 30px;
-
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stiliA.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -106,68 +15,52 @@
             <a href="#" class="logo">Quiz.</a>
             <nav class="navbar">
                 <a href="index.html"">Home</a>
-                <a href="about.html" class="active">About</a>
+                <a href=" about.html" class="active">About</a>
                 <a href="#">Services</a>
                 <a href="#">Contact</a>
             </nav>
         </header>
 
-        <video id="video-background" autoplay loop muted>
-            <source src="vid1.mp4" type="video/mp4">
-            <!-- Provide fallback content here -->
-        </video>
+        <h1>Hello world</h1>
+        <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis veritatis animi
+            aliquam
+            laboriosam velit, esse, blanditiis aspernatur sint est magnam debitis delectus in fuga fugiat repellat
+            dignissimos ipsum necessitatibus corrupti veniam reprehenderit,<span class="dots"> ...</span> <span
+                class="moreText"> assumenda sapiente expedita labore atque! Sint velit cumque minus pariatur
+                quisquam,
+                beatae ab quo impedit eaque soluta vel laboriosam itaque similique iste ex aut in nihil dolorem
+                consequuntur
+                possimus eligendi eos optio ipsam! Sint ullam voluptate obcaecati asperiores eos vero sed iusto
+                magnam
+                ad,
+                vel repellat quidem? Omnis fugit accusantium
 
-        <div id="canvas"></div>
+            </span></p>
+        <button class="read-more-btn">Read More</button>
 
-        <div id="content">
-            <h1>About Us</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit lectus sit amet consectetur
-                ultricies. Nulla facilisi. Curabitur tristique bibendum tincidunt. Phasellus ac tellus odio. Mauris
-                fringilla, purus sit amet cursus pretium, justo mauris consequat nulla, vitae gravida ex purus a enim.
-            </p>
+
+        <!-- *******************   -->
+        <!--  This Code is for only the floating card in right bottom corner -->
+        <!-- ********************  -->
+        <div class="float-text">
+            <p>get in touch</p>
         </div>
+        <div class="float-card-info">
 
+            <p>Have any questions?</p>
+            <!-- <div class="icons">
+                <a href="https://www.youtube.com" target="_blank"><i class="gg-youtube"></i></a>
+                <a href="https://facebook.com/" target="_blank"><i class="gg-facebook"></i></a>
+                <a href="https://instagram.com/" target="_blank"><i class="gg-instagram"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="gg-twitter"></i></a>
+            </div> -->
+            <a href="contact.html" target="_blank" class="contact link">Contact Us</a>
+            <a class="link" href="mailto:el51212@ubt-uni.net" target="_blank">el51212@ubt-uni.net</a>
+            <a class="link" href="mailto:el51212@ubt-uni.net" target="_blank">ei53712@ubt-uni.net</a>
+
+        </div>
     </main>
-
-
-    <script>
-        // Create Pixi.js application
-        const app = new PIXI.Application({
-            width: window.innerWidth,
-            height: window.innerHeight,
-            transparent: true,
-            antialias: true,
-            resolution: window.devicePixelRatio || 1,
-            view: document.getElementById("canvas"),
-        });
-
-        // Create video texture
-        const videoTexture = PIXI.Texture.from("era.mp4");
-        const videoSprite = new PIXI.Sprite(videoTexture);
-        videoSprite.width = app.renderer.width;
-        videoSprite.height = app.renderer.height;
-        app.stage.addChild(videoSprite);
-
-        // Add text element
-        const textStyle = new PIXI.TextStyle({
-            fontFamily: 'Arial',
-            fontSize: 40,
-            fill: '#FFFFFF',
-            align: 'center',
-        });
-
-        const textElement = new PIXI.Text("About Us", textStyle);
-        textElement.anchor.set(0.5);
-        textElement.position.set(app.renderer.width / 2, app.renderer.height / 2);
-        app.stage.addChild(textElement);
-
-        // Render the application
-        app.ticker.add(() => {
-            if (videoTexture.baseTexture.valid) {
-                videoTexture.update();
-            }
-        });
-    </script>
 </body>
+<script src="skriptaA.js"></script>
 
 </html>
